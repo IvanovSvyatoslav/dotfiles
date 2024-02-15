@@ -1,0 +1,167 @@
+" Don't try to be vi compatible
+set nocompatible
+
+" Helps force plugins to load correctly when it is turned back on below
+filetype off
+
+" Write viminfo to .vim
+set viminfo+=n~/.vim/viminfo
+
+" Turn on syntax highlighting
+syntax on
+
+" Do not save backup files.
+set nobackup
+
+" Sync clipboard
+set clipboard=unnamed
+
+" For plugins to load correctly
+filetype plugin indent on
+
+nnoremap <SPACE> <Nop>
+let mapleader = " "
+
+" Security
+set modelines=0
+
+" Show line numbers
+set number relativenumber
+set nu rnu
+" Show file stats
+set ruler
+
+" Encoding
+set encoding=utf-8
+
+" Whitespace
+set nowrap
+set formatoptions=tcqrn1
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set noshiftround
+
+" Cursor motion
+set scrolloff=3
+set backspace=indent,eol,start
+set matchpairs+=<:> " use % to jump between pairs
+runtime! macros/matchit.vim
+
+inoremap <nowait> jj <esc>
+ 
+" Enable auto completion menu after pressing TAB
+set wildmenu
+"" Make wildmenu behave like similar to Bash completion
+set wildmode=list:longest
+
+" There are certain files that we would never want to edit with Vim
+" Wildmenu will ignore files with these extensions
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+" Move up/down editor lines
+nnoremap j gj
+nnoremap k gk
+
+" Move faster
+" nnoremap H ^
+" nnoremap L $
+
+" Cursor highlight
+set ttimeoutlen=10
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" make cursor block in normal mode
+" reset the cursor on start (for older versions of vim, usually not required)
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
+
+" Allow hidden buffers
+set hidden
+
+" Rendering
+set ttyfast
+
+" Status bar
+set laststatus=2
+
+" Last line
+set showmode
+set showcmd
+
+" Searching
+nnoremap / /\v
+vnoremap / /\v
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+map <leader><space> :let @/=''<cr>
+" Remap help key.
+inoremap <F1> <ESC>:set invfullscreen<CR>a
+nnoremap <F1> :set invfullscreen<CR>
+vnoremap <F1> :set invfullscreen<CR>
+
+" Yank from cursor to the end of line
+nnoremap Y y$
+
+" Center the cursor vertically when moving to the next word during a search
+nnoremap n nzz
+nnoremap N Nzz
+
+" You can split the window in Vim by typing :split or :vsplit.
+" Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or
+" CTRL+l.
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" Resize split windows using arrow keys by pressing:
+" CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
+noremap <c-up> <c-w>+
+noremap <c-down> <c-w>-
+noremap <c-left> <c-w>>
+noremap <c-right> <c-w><
+
+" Formatting
+map <leader>q gqip
+
+" Visualize tabs and newlines
+set listchars=tab:▸\ ,eol:¬
+" Uncomment this to enable by default:
+" set list " To enable by default
+" Or use your leader key + l to toggle on/off
+map <leader>l :set list!<CR> " Toggle tabs and EO
+if &term =~ '256color'
+" Enable true (24-bit) colors instead of (8-bit) 256 colors.
+"   " :h true-color
+if has('termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+  endif
+  colorscheme catppuccin_mocha
+endif
+
+" If the current file type is HTML, set indentation to 2 spaces.
+autocmd Filetype html setlocal tabstop=2 shiftwidth=2 expandtab
+
+" You can split a window into sections by typing `:split` or`:vsplit`.
+" Display cursorline and cursorcolumn ONLY in active window.
+augroup cursor_off 
+    autocmd!  
+    autocmd WinLeave * set nocursorline nocursorcolumn 
+    autocmd WinEnter * set cursorline cursorcolumn 
+augroup END
+
+
+let g:airline_powerline_fonts = 1 " Enable powerline fonts
+let g:airline_section_z = "\ue0a1:%l/%L Col:%c" " Custom cursor location section
+let g:Powerline_symbols='unicode' " Unicode support
+let g:airline_theme='onedark'
