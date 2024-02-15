@@ -1,22 +1,29 @@
 # System
 alias rst='exec zsh'
+alias n='nvim'
+alias c='clear'
 
 # stow
 alias stowr='stow -D . && stow .'
 
 # Config files
-alias zshconf='$EDITOR $ZDOTDIR/.zshrc'
-alias zshprofile='$EDITOR $ZDOTDIR/.zprofile'
-alias zshals='$EDITOR $ZDOTDIR/aliases.zsh'
-alias zshfuncs='$EDITOR $ZDOTDIR/functions.zsh'
-alias vimconf='$EDITOR ~/.vim/vimrc'
-alias tmuxconf='$EDITOR ~/.config/tmux/tmux.conf'
+alias zconf='$EDITOR $ZDOTDIR/.zshrc'
+alias zprof='$EDITOR $ZDOTDIR/.zprofile'
+alias zals='$EDITOR $ZDOTDIR/aliases.zsh'
+alias zfuncs='$EDITOR $ZDOTDIR/functions.zsh'
+alias vconf='$EDITOR ~/.vim/vimrc'
+alias tconf='$EDITOR ~/.config/tmux/tmux.conf'
 
-# ls
+# eza
 if command_exists eza ; then
     alias ls='eza'
+    alias tree='eza --long --tree --level=3'
+    alias treea='eza --all --long --tree --level=3'
+    alias l='eza --oneline'
+    alias la='eza --oneline --all'
 fi
 
+# ls
 alias ll='ls -lh'
 alias lsa='ls -lah'
 

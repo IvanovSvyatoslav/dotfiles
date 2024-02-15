@@ -5,7 +5,7 @@ set nocompatible
 filetype off
 
 " Write viminfo to .vim
-set viminfo+=n~/.vim/viminfo
+set viminfo+=n~$XDG_CACHE_DIR/vim/viminfo
 
 " Turn on syntax highlighting
 syntax on
