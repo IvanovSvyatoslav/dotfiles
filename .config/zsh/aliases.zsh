@@ -1,12 +1,7 @@
 # System
 alias rst='exec zsh'
 alias n='nvim'
-alias c='clear'
-
-alias wget="wget --hsts-file $XDG_CACHE_HOME/wget/hsts"
-
-# stow
-alias stowr='stow -D . && stow .'
+alias cl='clear'
 
 # Config files
 alias zconf='$EDITOR $ZDOTDIR/.zshrc'
@@ -16,6 +11,25 @@ alias zenv='$EDITOR $ZDOTDIR/.zshenv'
 alias zfuncs='$EDITOR $ZDOTDIR/functions.zsh'
 alias vconf='$EDITOR ~/.vim/vimrc'
 alias tconf='$EDITOR $XDG_CONFIG_HOME/tmux/tmux.conf'
+
+# wget
+# Always try to (c)ontinue getting a partially-downloaded file
+alias wget="wget -c --hsts-file $XDG_CACHE_HOME/wget/hsts"
+
+# cp
+# Always copy contents of directories (r)ecursively and explain (v) what was done
+alias cp='cp -rv'
+
+# mv
+# Explain (v) what was done when moving a file
+alias mv='mv -v'
+
+# mkdir
+# Create any non-existent (p)arent directories and explain (v) what was done
+alias mkdir='mkdir -pv'
+
+# stow
+alias stowr='stow -D . && stow .'
 
 # git
 alias gc='git clone'
