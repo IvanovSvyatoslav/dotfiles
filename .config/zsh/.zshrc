@@ -1,10 +1,17 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # zsh-vi-mode
 source $ZDOTDIR/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 # The plugin will auto execute this zvm_after_init function
 function zvm_after_init() {
     # fzf
-    [ -f ~/.config/fzf/fzf.zsh ] && source ~/.config/fzf/fzf.zsh
+    [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ] && source $XDG_CONFIG_HOME/fzf/fzf.zsh
 }
 
 # zsh-auto-suggestions
@@ -18,12 +25,12 @@ zstyle ':autocomplete:*' delay 0.1  # seconds (float)
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 fast-theme XDG:catppuccin-mocha -q
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# History file location
+export HISTFILE="$XDG_CACHE_HOME/zsh/history"
+# How many commands zsh will load to memory.
+export HISTSIZE=100000
+# How many commands history will save on file.
+export SAVEHIST=100000
 
 setopt AUTO_CD
 setopt HIST_IGNORE_ALL_DUPS
@@ -40,6 +47,9 @@ source $ZDOTDIR/functions.zsh
 
 # Custom aliases
 source $ZDOTDIR/aliases.zsh
+
+# powerlevel10k
+source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 # brew installed completions
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
@@ -61,9 +71,5 @@ eval "$(zoxide init zsh)"
 export BAT_THEME="Catppuccin-mocha"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-# powerlevel10k
-source ~/.config/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
+# To customize prompt, run `p10k configure` or edit ~/.config/p10k/config.zsh.
+[[ ! -f ~/.config/p10k/config.zsh ]] || source ~/.config/p10k/config.zsh

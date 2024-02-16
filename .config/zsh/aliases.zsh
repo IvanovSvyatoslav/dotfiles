@@ -3,6 +3,8 @@ alias rst='exec zsh'
 alias n='nvim'
 alias c='clear'
 
+alias wget="wget --hsts-file $XDG_CACHE_HOME/wget/hsts"
+
 # stow
 alias stowr='stow -D . && stow .'
 
@@ -10,13 +12,23 @@ alias stowr='stow -D . && stow .'
 alias zconf='$EDITOR $ZDOTDIR/.zshrc'
 alias zprof='$EDITOR $ZDOTDIR/.zprofile'
 alias zals='$EDITOR $ZDOTDIR/aliases.zsh'
+alias zenv='$EDITOR $ZDOTDIR/.zshenv'
 alias zfuncs='$EDITOR $ZDOTDIR/functions.zsh'
 alias vconf='$EDITOR ~/.vim/vimrc'
-alias tconf='$EDITOR ~/.config/tmux/tmux.conf'
+alias tconf='$EDITOR $XDG_CONFIG_HOME/tmux/tmux.conf'
+
+# git
+alias gc='git clone'
+alias gsa='git submodule add'
+
+# lazygit
+if command_exists lazygit ; then
+    alias lg='lazygit'
+fi
 
 # eza
 if command_exists eza ; then
-    alias ls='eza'
+    alias ls='eza --git'
     alias tree='eza --long --tree --level=3'
     alias treea='eza --all --long --tree --level=3'
     alias l='eza --oneline'

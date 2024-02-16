@@ -4,8 +4,9 @@ set nocompatible
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
-" Write viminfo to .vim
-set viminfo+=n~$XDG_CACHE_DIR/vim/viminfo
+" Write viminfo to .cache/vim
+set viminfo+=n$XDG_CACHE_HOME.'/vim/viminfo'
+let g:netrw_home=$XDG_CACHE_HOME.'/vim'
 
 " Turn on syntax highlighting
 syntax on

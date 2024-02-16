@@ -1,5 +1,5 @@
 [submodule ".config/powerlevel10k"]
-	path = .config/powerlevel10k
+	path = .config/zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 [submodule ".config/tmux/plugins/tmux-sensible"]
 	path = .config/tmux/plugins/tmux-sensible
@@ -34,3 +34,18 @@
 [submodule ".config/zsh/plugins/zsh-vi-mode"]
 	path = .config/zsh/plugins/zsh-vi-mode
 	url = https://github.com/jeffreytse/zsh-vi-mode.git
+[submodule ".config/yazi/plugins/glow.yazi"]
+	path = .config/yazi/plugins/glow.yazi
+	url = https://github.com/Reledia/glow.yazi.git
+[submodule ".config/yazi/plugins/keyjump.yazi"]
+	path = .config/yazi/plugins/keyjump.yazi
+	url = https://github.com/DreamMaoMao/keyjump.yazi.git
+[submodule ".config/yazi/plugins/miller_csv"]
+	path = .config/yazi/plugins/miller_csv
+	url = https://github.com/Reledia/miller.yazi.git
+[submodule "/Users/ivsv/.dotfiles/.config/yazi/plugins/exifaudio.yazi"]
+	path = /Users/ivsv/.dotfiles/.config/yazi/plugins/exifaudio.yazi
+	url = https://github.com/Sonico98/exifaudio.yazi.git
+[submodule ".config/yazi/plugins/hexyl.yazi"]
+	path = .config/yazi/plugins/hexyl.yazi
+	url = https://github.com/Reledia/hexyl.yazi.git
