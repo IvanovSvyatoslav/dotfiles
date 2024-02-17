@@ -68,7 +68,7 @@ fi
 # fzf
 if command_exists fzf ; then
     if command_exists bat ; then
-        alias fzfp='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'
+        alias fzfp='fzf --preview "bat --color=always --style=numbers,changes --line-range=:500 {}"'
     fi
 fi
 

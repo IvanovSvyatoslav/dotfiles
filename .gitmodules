@@ -43,8 +43,8 @@
 [submodule ".config/yazi/plugins/miller_csv"]
 	path = .config/yazi/plugins/miller_csv
 	url = https://github.com/Reledia/miller.yazi.git
-[submodule "/Users/ivsv/.dotfiles/.config/yazi/plugins/exifaudio.yazi"]
-	path = /Users/ivsv/.dotfiles/.config/yazi/plugins/exifaudio.yazi
+[submodule ".config/yazi/plugins/exifaudio.yazi"]
+	path = .config/yazi/plugins/exifaudio.yazi
 	url = https://github.com/Sonico98/exifaudio.yazi.git
 [submodule ".config/yazi/plugins/hexyl.yazi"]
 	path = .config/yazi/plugins/hexyl.yazi
@@ -58,8 +58,8 @@
 [submodule ".config/tmux/plugins/tmux-battery"]
 	path = .config/tmux/plugins/tmux-battery
 	url = https://github.com/tmux-plugins/tmux-battery
-[submodule "/Users/ivsv/.dotfiles/.vim/pack/plugins/start/vim-tmux-navigator"]
-	path = /Users/ivsv/.dotfiles/.vim/pack/plugins/start/vim-tmux-navigator
+[submodule ".vim/pack/plugins/start/vim-tmux-navigator"]
+	path = .vim/pack/plugins/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
 [submodule ".vim/pack/dist/start/vim-airline"]
 	path = .vim/pack/dist/start/vim-airline

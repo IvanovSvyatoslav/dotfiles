@@ -76,6 +76,9 @@ cp ~/.dotfiles/.config/zsh/personal.zsh.example ~/.dotfiles/.config/zsh/personal
 cd ~/.dotfiles
 stow .
 
+# Clean completions cache
+rm -f $XDG_CACHE_HOME/.zcompdump; compinit
+
 # Asdf
 
 # Install asdf
