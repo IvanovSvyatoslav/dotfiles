@@ -11,6 +11,7 @@ alias zenv='$EDITOR $ZDOTDIR/.zshenv'
 alias zfuncs='$EDITOR $ZDOTDIR/functions.zsh'
 alias vconf='$EDITOR ~/.vim/vimrc'
 alias tconf='$EDITOR $XDG_CONFIG_HOME/tmux/tmux.conf'
+alias instsc='$EDITOR ~/.dotfiles/bin/install.sh'
 
 # wget
 # Always try to (c)ontinue getting a partially-downloaded file

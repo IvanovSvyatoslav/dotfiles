@@ -2,7 +2,7 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+
 fi
 
 # History file location
@@ -73,3 +73,5 @@ eval $(thefuck --alias)
 
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+. $ASDF_DATA_DIR/plugins/java/set-java-home.zsh
+

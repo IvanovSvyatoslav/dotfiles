@@ -5,13 +5,14 @@ set nocompatible
 filetype off
 
 " Write viminfo to .cache/vim
-set viminfo+=n$XDG_CACHE_HOME.'/vim/viminfo'
+set viminfo+=n~/.cache/vim/viminfo
 let g:netrw_home=$XDG_CACHE_HOME.'/vim'
 
 " Turn on syntax highlighting
 syntax on
 
 " Do not save backup files.
+"
 set nobackup
 
 " Sync clipboard
@@ -55,7 +56,7 @@ set matchpairs+=<:> " use % to jump between pairs
 runtime! macros/matchit.vim
 
 inoremap <nowait> jj <esc>
- 
+
 " Enable auto completion menu after pressing TAB
 set wildmenu
 "" Make wildmenu behave like similar to Bash completion
@@ -69,9 +70,15 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 nnoremap j gj
 nnoremap k gk
 
+" Remap joining lines and something else
+nnoremap <leader>J J
+nnoremap <leader>K K
+
 " Move faster
-" nnoremap H ^
-" nnoremap L $
+nnoremap H ^
+nnoremap L $
+noremap J 5j
+noremap K 5k
 
 " Cursor highlight
 set ttimeoutlen=10
@@ -81,8 +88,8 @@ let &t_EI = "\e[2 q"
 " make cursor block in normal mode
 " reset the cursor on start (for older versions of vim, usually not required)
 augroup myCmds
-au!
-autocmd VimEnter * silent !echo -ne "\e[2 q"
+    au!
+    autocmd VimEnter * silent !echo -ne "\e[2 q"
 augroup END
 
 " Allow hidden buffers
@@ -106,11 +113,8 @@ set incsearch
 set ignorecase
 set smartcase
 set showmatch
-map <leader><space> :let @/=''<cr>
-" Remap help key.
-inoremap <F1> <ESC>:set invfullscreen<CR>a
-nnoremap <F1> :set invfullscreen<CR>
-vnoremap <F1> :set invfullscreen<CR>
+
+map <leader><space> :nohl<CR>
 
 " Yank from cursor to the end of line
 nnoremap Y y$
@@ -128,11 +132,10 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " Resize split windows using arrow keys by pressing:
-" CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
-noremap <c-up> <c-w>+
-noremap <c-down> <c-w>-
-noremap <c-left> <c-w>>
-noremap <c-right> <c-w><
+noremap <Leader><Up> 3<c-w>+
+noremap <Leader><Down> 3<c-w>-
+noremap <Leader><Left> 3<c-w>>
+noremap <Leader><Right> 3<c-w><
 
 " Formatting
 map <leader>q gqip
@@ -142,16 +145,16 @@ set listchars=tab:▸\ ,eol:¬
 " Uncomment this to enable by default:
 " set list " To enable by default
 " Or use your leader key + l to toggle on/off
-map <leader>l :set list!<CR> " Toggle tabs and EO
+map <leader><leader>l :set list!<CR> " Toggle tabs and EO
 if &term =~ '256color'
-" Enable true (24-bit) colors instead of (8-bit) 256 colors.
-"   " :h true-color
-if has('termguicolors')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-  endif
-  colorscheme catppuccin_mocha
+    " Enable true (24-bit) colors instead of (8-bit) 256 colors.
+    "   " :h true-color
+    if has('termguicolors')
+        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+        set termguicolors
+    endif
+    colorscheme catppuccin_mocha
 endif
 
 " If the current file type is HTML, set indentation to 2 spaces.
@@ -166,7 +169,52 @@ augroup cursor_off
 augroup END
 
 
+" airline
 let g:airline_powerline_fonts = 1 " Enable powerline fonts
 let g:airline_section_z = "\ue0a1:%l/%L Col:%c" " Custom cursor location section
-let g:Powerline_symbols='unicode' " Unicode support
-let g:airline_theme='onedark'
+let g:Powerline_symbols='unicode' " Unicode support                                                                      █
+let g:airline_theme='onedark'  
+
+" highlighted yank
+let g:highlightedyank_highlight_duration = 500
+
+" easy motion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+map <Leader> <Plug>(easymotion-prefix)
+
+" <Leader>f{char} to move to {char}
+map  f <Plug>(easymotion-f)
+map  F <Plug>(easymotion-F)
+
+" Same for t
+map  t <Plug>(easymotion-t)
+map  T <Plug>(easymotion-T)
+
+" s{char}{char} to move to {char}{char}
+map z <Plug>(easymotion-f2)
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+" Move to line
+map <Leader>l <Plug>(easymotion-bd-jk)
+nmap <Leader>l <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" Search config
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
