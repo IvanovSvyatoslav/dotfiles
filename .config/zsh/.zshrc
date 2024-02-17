@@ -5,26 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# zsh-vi-mode
-source $ZDOTDIR/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
-# The plugin will auto execute this zvm_after_init function
-function zvm_after_init() {
-    # fzf
-    [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ] && source $XDG_CONFIG_HOME/fzf/fzf.zsh
-}
-
-# zsh-auto-suggestions
-source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# zsh-auto-completions
-source $ZDOTDIR/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
-zstyle ':autocomplete:*' delay 0.1  # seconds (float)
-
-# fast-syntax-highlighting
-source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-fast-theme XDG:catppuccin-mocha -q
-
 # History file location
 export HISTFILE="$XDG_CACHE_HOME/zsh/history"
 # How many commands zsh will load to memory.
@@ -32,6 +12,7 @@ export HISTSIZE=100000
 # How many commands history will save on file.
 export SAVEHIST=100000
 
+# History improvements
 setopt AUTO_CD
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
@@ -42,17 +23,37 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_VERIFY
 setopt APPENDHISTORY 
 
+# Personal aliases and commands
+source $ZDOTDIR/personal.zsh
+
 # Custom commands
 source $ZDOTDIR/functions.zsh
 
 # Custom aliases
 source $ZDOTDIR/aliases.zsh
 
-# powerlevel10k
-source $ZDOTDIR/plugins/powerlevel10k/powerlevel10k.zsh-theme
+# zsh-vi-mode
+source $ZPLUGDIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+# The plugin will auto execute this zvm_after_init function
+function zvm_after_init() {
+    # fzf
+    [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ] && source $XDG_CONFIG_HOME/fzf/fzf.zsh
+}
 
-# brew installed completions
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# zsh-auto-suggestions
+source $ZPLUGDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zsh-auto-completions
+source $ZPLUGDIR/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
+zstyle ':autocomplete:*' delay 0.1  # seconds (float)
+
+# fast-syntax-highlighting
+source $ZPLUGDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+fast-theme XDG:catppuccin-mocha -q
+
+# powerlevel10k
+source $ZPLUGDIR/powerlevel10k/powerlevel10k.zsh-theme
 
 # Completions
 zstyle '*:compinit' arguments -d "$XDG_CACHE_HOME/zsh/.zcompdump"
@@ -61,15 +62,14 @@ zstyle '*:compinit' arguments -d "$XDG_CACHE_HOME/zsh/.zcompdump"
 # zoxide
 eval "$(zoxide init zsh)"
 
-# fzf
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-
-# bat
-export BAT_THEME="Catppuccin-mocha"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
 # To customize prompt, run `p10k configure` or edit ~/.config/p10k/config.zsh.
-[[ ! -f ~/.config/p10k/config.zsh ]] || source ~/.config/p10k/config.zsh
+[[ ! -f $XDG_CONFIG_HOME/p10k/config.zsh ]] || source $XDG_CONFIG_HOME/p10k/config.zsh
+
+# navi
+eval "$(navi widget zsh)"
+
+# thefuck
+eval $(thefuck --alias)
+
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh

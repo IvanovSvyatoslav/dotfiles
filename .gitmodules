@@ -49,3 +49,21 @@
 [submodule ".config/yazi/plugins/hexyl.yazi"]
 	path = .config/yazi/plugins/hexyl.yazi
 	url = https://github.com/Reledia/hexyl.yazi.git
+[submodule ".config/zsh/plugins/zsh-completions"]
+	path = .config/zsh/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
+[submodule ".config/tmux/plugins/tmux-weather"]
+	path = .config/tmux/plugins/tmux-weather
+	url = https://github.com/xamut/tmux-weather.git
+[submodule ".config/tmux/plugins/tmux-battery"]
+	path = .config/tmux/plugins/tmux-battery
+	url = https://github.com/tmux-plugins/tmux-battery
+[submodule "/Users/ivsv/.dotfiles/.vim/pack/plugins/start/vim-tmux-navigator"]
+	path = /Users/ivsv/.dotfiles/.vim/pack/plugins/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule ".vim/pack/dist/start/vim-airline"]
+	path = .vim/pack/dist/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule ".vim/pack/dist/start/vim-airline-themes"]
+	path = .vim/pack/dist/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes

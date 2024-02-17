@@ -24,6 +24,10 @@ alias cp='cp -rv'
 # Explain (v) what was done when moving a file
 alias mv='mv -v'
 
+# rm
+# Explain (v) what was done when removing a file
+alias rm='rm -v'
+
 # mkdir
 # Create any non-existent (p)arent directories and explain (v) what was done
 alias mkdir='mkdir -pv'
@@ -32,8 +36,10 @@ alias mkdir='mkdir -pv'
 alias stowr='stow -D . && stow .'
 
 # git
-alias gc='git clone'
+alias gcl='git clone'
 alias gsa='git submodule add'
+alias gst='git status'
+alias gl='git log'
 
 # lazygit
 if command_exists lazygit ; then
@@ -83,3 +89,12 @@ if command_exists bat ; then
     alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 fi
 
+# thefuck
+if command_exists fuck ; then
+    alias f='fuck'
+fi
+
+# tmuxinator
+if command_exists tmuxinator ; then
+    alias mux='tmuxinator'
+fi

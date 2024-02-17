@@ -29,8 +29,12 @@ set modelines=0
 " Show line numbers
 set number relativenumber
 set nu rnu
+
 " Show file stats
 set ruler
+
+" Enable mouse
+set mouse=a
 
 " Encoding
 set encoding=utf-8

@@ -20,6 +20,6 @@ function ya() {
 }
 
 function c() {
-    __zoxide_z "$1"
+    __zoxide_z "$@"
     eza --all
 }
