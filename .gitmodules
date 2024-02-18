@@ -18,10 +18,10 @@
 	url = https://github.com/christoomey/vim-tmux-navigator.git
 [submodule ".vim/pack/tpope/start/commentary"]
 	path = .vim/pack/tpope/start/commentary
-	url = https://github.com/tpope/vim-commentary.git
+	url = https://tpope.io/vim/commentary.git
 [submodule ".vim/pack/tpope/start/surround"]
 	path = .vim/pack/tpope/start/surround
-	url = https://github.com/tpope/vim-surround.git
+	url = https://tpope.io/vim/surround.git
 [submodule ".config/zsh/plugins/fast-syntax-highlighting"]
 	path = .config/zsh/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
