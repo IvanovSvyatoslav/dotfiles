@@ -1,4 +1,4 @@
-[submodule ".config/powerlevel10k"]
+[submodule ".config/zsh/plugins/powerlevel10k"]
 	path = .config/zsh/plugins/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 [submodule ".config/tmux/plugins/tmux-sensible"]

@@ -15,7 +15,7 @@ export TEALDEER_CONFIG_DIR="$XDG_CONFIG_HOME/tealdeer"
 
 # asdf
 export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdf/.asdfrc"
-export ASDF_DATA_DIR="$XDG_CACHE_HOME/asdf"
+export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
 
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 # zsh-completions plugin
