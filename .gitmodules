@@ -16,12 +16,6 @@
 [submodule ".config/tmux/plugins/vim-tmux-navigator"]
 	path = .config/tmux/plugins/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
-[submodule ".vim/pack/tpope/start/commentary"]
-	path = .vim/pack/tpope/start/commentary
-	url = https://tpope.io/vim/commentary.git
-[submodule ".vim/pack/tpope/start/surround"]
-	path = .vim/pack/tpope/start/surround
-	url = https://tpope.io/vim/surround.git
 [submodule ".config/zsh/plugins/fast-syntax-highlighting"]
 	path = .config/zsh/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
@@ -58,21 +52,3 @@
 [submodule ".config/tmux/plugins/tmux-battery"]
 	path = .config/tmux/plugins/tmux-battery
 	url = https://github.com/tmux-plugins/tmux-battery
-[submodule ".vim/pack/plugins/start/vim-tmux-navigator"]
-	path = .vim/pack/plugins/start/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator.git
-[submodule ".vim/pack/dist/start/vim-airline"]
-	path = .vim/pack/dist/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule ".vim/pack/dist/start/vim-airline-themes"]
-	path = .vim/pack/dist/start/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
-[submodule ".vim/pack/plugins/start/vim-highlightedyank"]
-	path = .vim/pack/plugins/start/vim-highlightedyank
-	url = https://github.com/machakann/vim-highlightedyank.git
-[submodule ".vim/pack/plugins/start/targets.vim"]
-	path = .vim/pack/plugins/start/targets.vim
-	url = https://github.com/wellle/targets.vim.git
-[submodule ".vim/pack/plugins/start/vim-easymotion"]
-	path = .vim/pack/plugins/start/vim-easymotion
-	url = https://github.com/easymotion/vim-easymotion.git
