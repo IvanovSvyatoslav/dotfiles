@@ -1,17 +1,19 @@
 # System
 alias rst='exec zsh'
-alias n='nvim'
 alias cl='clear'
 
 # Config files
-alias zconf='$EDITOR $ZDOTDIR/.zshrc'
-alias zprof='$EDITOR $ZDOTDIR/.zprofile'
-alias zals='$EDITOR $ZDOTDIR/aliases.zsh'
-alias zenv='$EDITOR $ZDOTDIR/.zshenv'
-alias zfuncs='$EDITOR $ZDOTDIR/functions.zsh'
-alias vconf='$EDITOR ~/.vim/vimrc'
-alias tconf='$EDITOR $XDG_CONFIG_HOME/tmux/tmux.conf'
-alias instsc='$EDITOR ~/.dotfiles/bin/install.sh'
+alias zconf='$VISUAL $ZDOTDIR/.zshrc'
+alias zprof='$VISUAL $ZDOTDIR/.zprofile'
+alias zals='$VISUAL $ZDOTDIR/aliases.zsh'
+alias zenv='$VISUAL $ZDOTDIR/.zshenv'
+alias zfuncs='$VISUAL $ZDOTDIR/functions.zsh'
+alias vconf='$VISUAL ~/.vim/vimrc'
+alias tconf='$VISUAL $XDG_CONFIG_HOME/tmux/tmux.conf'
+alias lvconf='$VISUAL $XDG_CONFIG_HOME/nvim-lazyvim'
+alias kvconf='$VISUAL $XDG_CONFIG_HOME/nvim-kickstart'
+alias ovconf='$VISUAL $XDG_CONFIG_HOME/nvim-obsidian'
+alias instsc='$VISUAL ~/.dotfiles/bin/install.sh'
 
 # wget
 # Always try to (c)ontinue getting a partially-downloaded file
@@ -45,6 +47,15 @@ alias gl='git log'
 # lazygit
 if command_exists lazygit ; then
     alias lg='lazygit'
+fi
+
+# neovim
+if command_exists nvim ; then
+    alias lv='~/bin/nvim-lazyvim'
+    alias kv='~/bin/nvim-kickstart'
+    alias ov='~/bin/nvim-obsidian'
+    alias nvim='lv'
+    alias vim='nvim'
 fi
 
 # eza

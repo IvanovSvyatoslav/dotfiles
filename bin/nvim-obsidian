@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+NVIM_APPNAME="nvim-obsidian" nvim $@

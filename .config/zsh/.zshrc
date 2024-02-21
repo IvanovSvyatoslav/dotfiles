@@ -48,6 +48,12 @@ source $ZPLUGDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZPLUGDIR/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
 zstyle ':autocomplete:*' delay 0.1  # seconds (float)
 
+# zoxide
+eval "$(zoxide init zsh)"
+
+# navi
+eval "$(navi widget zsh)"
+
 # fast-syntax-highlighting
 source $ZPLUGDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 fast-theme XDG:catppuccin-mocha -q
@@ -59,14 +65,8 @@ source $ZPLUGDIR/powerlevel10k/powerlevel10k.zsh-theme
 zstyle '*:compinit' arguments -d "$XDG_CACHE_HOME/zsh/.zcompdump"
 # autoload -U compinit; compinit -d "$XDG_CACHE_HOME/zsh/.zcompdump"
 
-# zoxide
-eval "$(zoxide init zsh)"
-
 # To customize prompt, run `p10k configure` or edit ~/.config/p10k/config.zsh.
 [[ ! -f $XDG_CONFIG_HOME/p10k/config.zsh ]] || source $XDG_CONFIG_HOME/p10k/config.zsh
-
-# navi
-eval "$(navi widget zsh)"
 
 # thefuck
 eval $(thefuck --alias)

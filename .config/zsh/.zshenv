@@ -20,4 +20,3 @@ export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 # zsh-completions plugin
 FPATH="${ZPLUGDIR}/zsh-completions/src:${FPATH}"
-

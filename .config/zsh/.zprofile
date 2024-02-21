@@ -1,5 +1,5 @@
-export EDITOR='vim'
-export VISUAL="vim"
+export EDITOR="$HOME/bin/nvim-lazyvim"
+export VISUAL="$HOME/bin/nvim-lazyvim"
 
 # Disable zsh_sessions
 export SHELL_SESSIONS_DISABLE=1

@@ -1,6 +1,6 @@
 \.git
 \.gitignore
-bin
+scripts
 \.DS_Store
 \.gitmodules
 README.md
