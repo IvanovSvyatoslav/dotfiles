@@ -2,6 +2,5 @@
 prepend_previewers = [
     { name = "*.md", exec = "glow" },
     { mime = "audio/*", exec = "exifaudio" },
-    { mime = "text/csv", exec = "miller_csv" },
-    # { mime = "*", exec = "hexyl"},
+    { mime = "text/csv", exec = "miller"},
 ]
