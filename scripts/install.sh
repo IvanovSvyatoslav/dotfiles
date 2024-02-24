@@ -2,63 +2,78 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install tools without dependencies
-brew install
 # https://docs.asciinema.org/getting-started/
-asciinema
 # https://github.com/sharkdp/bat
-bat
 # https://github.com/aristocratos/btop
-btop
 # https://github.com/bootandy/dust
-dust
 # https://github.com/eza-community/eza
-eza
 # https://github.com/sharkdp/fd
-fd
 # https://github.com/junegunn/fzf
-fzf
 # https://cli.github.com/
-gh
 # https://github.com/dandavison/delta
-git-delta
 # https://git-lfs.com/
-git-lfs
 # https://github.com/charmbracelet/glow
-glow
 # https://github.com/sharkdp/hexyl
-hexyl
 # https://github.com/httpie/cli
-httpie
 # https://jqlang.github.io/jq/
-jq
 # https://github.com/jesseduffield/lazygit
-jesseduffield/lazygit/lazygit
 # https://midnight-commander.org/
-midnight-commander
 # https://github.com/denisidoro/navi
-navi
 # https://github.com/romkatv/powerlevel10k
-powerlevel10k
 # https://github.com/BurntSushi/ripgrep
-ripgrep
 # https://www.gnu.org/software/stow/
-stow
 # https://github.com/dbrgn/tealdeer
-tealdeer
 # https://github.com/nvbn/thefuck
-thefuck
 # https://github.com/tmux/tmux/wiki
-tmux
 # https://github.com/tmuxinator/tmuxinator
-tmuxinator
 # https://github.com/XAMPPRocky/tokei
-tokei
 # https://github.com/topgrade-rs/topgrade
-topgrade
 # https://www.gnu.org/software/wget/
-wget
 # https://github.com/ajeetdsouza/zoxide
-zoxide
+# https://www.gitkraken.com/cli
+# https://github.com/noahgorstein/jqp
+# https://nektosact.com
+# https://github.com/casey/just
+# https://github.com/pypa/pipx
+# https://pnpm.io/
+brew install \
+	asciinema \
+	bat \
+	btop \
+	dust \
+	eza \
+	fd \
+	fzf \
+	gh \
+	git-delta \
+	git-lfs \
+	glow \
+	hexyl \
+	httpie \
+	jq \
+	jesseduffield/lazygit/lazygit \
+	midnight-commander \
+	navi \
+	powerlevel10k \
+	ripgrep \
+	stow \
+	tealdeer \
+	thefuck \
+	tmux \
+	tmuxinator \
+	tokei \
+	topgrade \
+	wget \
+	zoxide \
+	gitkraken-cli \
+	noahgorstein/tap/jqp \
+	act \
+	just \
+	pipx \
+	pnpm
+
+# pipx postinstall
+pipx ensurepath
 
 # Yazi install
 brew install \
@@ -101,9 +116,9 @@ asdf install python latest
 asdf global python latest
 
 # Asdf Java plugin
-# https://github.com/halcyon/asdf-java?tab=readme-ov-file
+# https://github.com/halcyon/asdf-java
 asdf plugin-add java https://github.com/halcyon/asdf-java.git
-sdf install java latest:temurin-21
+asdf install java latest:temurin-21
 echo "You should set global java version by yourself"
 
 # Asdf Maven plugin
@@ -111,3 +126,45 @@ echo "You should set global java version by yourself"
 asdf plugin-add maven
 asdf install maven latest
 asdf global maven latest
+
+# Asdf .Net Core
+# https://github.com/emersonsoares/asdf-dotnet-core
+asdf plugin-add dotnet-core https://github.com/emersonsoares/asdf-dotnet-core.git
+asdf install dotnet-core latest
+asdf global dotnet-core latest
+
+# Asdf golang
+# https://github.com/asdf-community/asdf-golang
+asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
+asdf install golang latest
+asdf global golang latest
+
+# Asdf rust
+# https://github.com/code-lever/asdf-rust
+asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+asdf install rust latest
+asdf global rust latest
+
+# Asdf just
+# https://github.com/olofvndrhr/asdf-just
+asdf plugin-add just https://github.com/olofvndrhr/asdf-just.git
+asdf install just latest
+asdf global just latest
+
+# Asdf act
+# https://github.com/grimoh/asdf-act
+asdf plugin-add act https://github.com/grimoh/asdf-act.git
+asdf install act latest
+asdf global act latest
+
+# Asdf poetry
+# https://github.com/asdf-community/asdf-poetry
+asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
+asdf install poetry latest
+asdf global poetry latest
+
+# Asdf pnpm
+# https://github.com/jonathanmorley/asdf-pnpm
+asdf plugin-add pnpm
+asdf install pnpm latest
+asdf global pnpm latest

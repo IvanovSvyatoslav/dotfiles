@@ -8,12 +8,11 @@ alias zprof='$VISUAL $ZDOTDIR/.zprofile'
 alias zals='$VISUAL $ZDOTDIR/aliases.zsh'
 alias zenv='$VISUAL $ZDOTDIR/.zshenv'
 alias zfuncs='$VISUAL $ZDOTDIR/functions.zsh'
-alias vconf='$VISUAL ~/.vim/vimrc'
 alias tconf='$VISUAL $XDG_CONFIG_HOME/tmux/tmux.conf'
 alias lvconf='$VISUAL $XDG_CONFIG_HOME/nvim-lazyvim'
 alias kvconf='$VISUAL $XDG_CONFIG_HOME/nvim-kickstart'
 alias ovconf='$VISUAL $XDG_CONFIG_HOME/nvim-obsidian'
-alias instsc='$VISUAL ~/.dotfiles/bin/install.sh'
+alias instsc='$VISUAL ~/.dotfiles/scripts/install.sh'
 
 # wget
 # Always try to (c)ontinue getting a partially-downloaded file

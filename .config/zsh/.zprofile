@@ -19,3 +19,6 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
+
+# Created by `pipx` on 2024-02-23 15:57:42
+export PATH="$PATH:/Users/ivsv/.local/bin"

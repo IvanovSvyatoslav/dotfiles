@@ -32,6 +32,13 @@ source $ZDOTDIR/functions.zsh
 # Custom aliases
 source $ZDOTDIR/aliases.zsh
 
+# brew installed completions
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+# zsh-completions plugin
+FPATH="${ZPLUGDIR}/zsh-completions/src:${FPATH}"
+# Custom completions
+FPATH="${ZDOTDIR}/completions:${FPATH}"
+
 # zsh-vi-mode
 source $ZPLUGDIR/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
@@ -46,7 +53,7 @@ source $ZPLUGDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-auto-completions
 source $ZPLUGDIR/zsh-autocomplete/zsh-autocomplete.plugin.zsh 
-zstyle ':autocomplete:*' delay 0.1  # seconds (float)
+zstyle ':autocomplete:*' add-space '*'
 
 # zoxide
 eval "$(zoxide init zsh)"
@@ -74,4 +81,10 @@ eval $(thefuck --alias)
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 . $ASDF_DATA_DIR/plugins/java/set-java-home.zsh
+. $ASDF_DATA_DIR/plugins/dotnet-core/set-dotnet-home.zsh
+. $ASDF_DATA_DIR/plugins/golang/set-env.zsh
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+
+# Created by `pipx` on 2024-02-23 15:57:42
+export PATH="$PATH:/Users/ivsv/.local/bin"
 
