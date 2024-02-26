@@ -1,7 +1,5 @@
 # My dotfiles setup
-
+[[ IN PROGRESS ]]
 todo:
-add tmuxinator
-put data in git/config
-fill personal.zsh
+install zsh
 install docker
