@@ -12,6 +12,7 @@ alias tconf='$VISUAL $XDG_CONFIG_HOME/tmux/tmux.conf'
 alias lvconf='$VISUAL $XDG_CONFIG_HOME/nvim-lazyvim'
 alias kvconf='$VISUAL $XDG_CONFIG_HOME/nvim-kickstart'
 alias ovconf='$VISUAL $XDG_CONFIG_HOME/nvim-obsidian'
+alias sshconf='$VISUAL $HOME/.ssh/'
 alias instsc='$VISUAL ~/.dotfiles/scripts/install.sh'
 
 # wget
@@ -59,11 +60,11 @@ fi
 
 # eza
 if command_exists eza ; then
-    alias ls='eza --git'
-    alias tree='eza --long --tree --level=3'
-    alias treea='eza --all --long --tree --level=3'
-    alias l='eza --oneline'
-    alias la='eza --oneline --all'
+    alias ls='eza --git --icons'
+    alias tree='eza --long --tree --level=3 --icons'
+    alias treea='eza --all --long --tree --level=3 --icons'
+    alias l='eza --oneline --icons'
+    alias la='eza --oneline --all --icons'
 fi
 
 # ls

@@ -19,5 +19,7 @@ export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
 # pypoetry
 export POETRY_CONFIG_DIR="$XDG_CONFIG_HOME/pypoetry"
 
+# 1passwrd ssh agent
+export SSH_AUTH_SOCK=~/.1password/agent.sock
 # Expiremental, setting language to english manually
 # LANG=en_US
