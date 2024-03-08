@@ -79,7 +79,7 @@ zstyle '*:compinit' arguments -d "$XDG_CACHE_HOME/zsh/.zcompdump"
 eval $(thefuck --alias)
 
 # asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. $(brew --prefix)/opt/asdf/libexec/asdf.sh
 . $ASDF_DATA_DIR/plugins/java/set-java-home.zsh
 . $ASDF_DATA_DIR/plugins/dotnet-core/set-dotnet-home.zsh
 . $ASDF_DATA_DIR/plugins/golang/set-env.zsh

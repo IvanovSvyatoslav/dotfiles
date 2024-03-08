@@ -1,6 +1,26 @@
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+if [ "$(uname)" = "Darwin" ]; then
+	# Mac OS X platform
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+	# GNU/Linux platform
+	sudo apt-get install build-essential procps curl file git
+	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+# Install stow
+# https://www.gnu.org/software/stow/
+brew install stow
+
+# Run stow
+cd ~/.dotfiles
+stow .
+
+# reload config
+exec zsh
+
 # Install tools without dependencies
 # https://docs.asciinema.org/getting-started/
 # https://github.com/sharkdp/bat
@@ -21,7 +41,6 @@
 # https://github.com/denisidoro/navi
 # https://github.com/romkatv/powerlevel10k
 # https://github.com/BurntSushi/ripgrep
-# https://www.gnu.org/software/stow/
 # https://github.com/dbrgn/tealdeer
 # https://github.com/nvbn/thefuck
 # https://github.com/tmux/tmux/wiki
@@ -56,7 +75,6 @@ brew install \
 	navi \
 	powerlevel10k \
 	ripgrep \
-	stow \
 	tealdeer \
 	thefuck \
 	tmux \
@@ -72,6 +90,9 @@ brew install \
 	pipx \
 	pnpm
 
+# reload config
+exec zsh
+
 # pipx postinstall
 pipx ensurepath
 
@@ -84,13 +105,12 @@ brew install \
 	miller \
 	yazi
 
+# reload config
+exec zsh
+
 # Setup private files
 cp ~/.dotfiles/.config/git/config.example ~/.dotfiles/.config/git/config
 cp ~/.dotfiles/.config/zsh/personal.zsh.example ~/.dotfiles/.config/zsh/personal.zsh
-
-# Run stow
-cd ~/.dotfiles
-stow .
 
 # Clean completions cache
 rm -f $XDG_CACHE_HOME/.zcompdump
@@ -101,6 +121,9 @@ compinit
 # Install asdf
 # https://asdf-vm.com/guide/getting-started.html
 brew install coreutils curl git asdf
+
+# reload config
+exec zsh
 
 # Asdf Node.js plugin
 # https://github.com/asdf-vm/asdf-nodejs/

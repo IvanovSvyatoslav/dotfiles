@@ -6,6 +6,9 @@ local map = vim.keymap.set
 
 map("i", "jj", "<ESC>", { silent = true })
 
+map("n", "<C-d>", "<C-d>zz", { desc = "Center cursor after moving down half-page" })
+map("n", "<C-u>", "<C-u>zz", { desc = "Center cursor after moving up half-page" })
+
 -- Save pasted word in register when replacing
 map("x", "<leader>p", [["_dP]])
 

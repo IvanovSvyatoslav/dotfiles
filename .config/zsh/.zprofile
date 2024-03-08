@@ -7,7 +7,13 @@ export SHELL_SESSIONS_DISABLE=1
 # Added by Toolbox App
 export PATH="$PATH:/Users/ivsv/Library/Application Support/JetBrains/Toolbox/scripts"
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ "$(uname)" = "Darwin" ]; then
+  # Mac OS X platform
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+  # GNU/Linux platform
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 # bat
 export BAT_THEME="Catppuccin-mocha"
@@ -15,9 +21,9 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # fzf
 export FZF_DEFAULT_OPTS=" \
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
---color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+  --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+  --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+  --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
 
 # Created by `pipx` on 2024-02-23 15:57:42
