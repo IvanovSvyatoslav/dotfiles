@@ -81,12 +81,12 @@ brew install \
 	topgrade \
 	wget \
 	zoxide \
-	gitkraken-cli \
 	act \
 	just \
 	pipx \
 	pnpm
 
+brew install --cask gitkraken-cli
 brew install jesseduffield/lazygit/lazygit
 brew install noahgorstein/tap/jqp
 
