@@ -213,8 +213,8 @@ require('lazy').setup({
   --     require('onedark').load()
   --   end,
   -- },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  
+  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -682,8 +682,7 @@ cmp.setup {
 }
 
 -- Configure colorscheme
-vim.cmd.colorscheme "catppuccin"
-
+vim.cmd.colorscheme 'catppuccin'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
