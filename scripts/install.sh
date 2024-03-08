@@ -69,7 +69,6 @@ brew install \
 	hexyl \
 	httpie \
 	jq \
-	jesseduffield/lazygit/lazygit \
 	midnight-commander \
 	navi \
 	powerlevel10k \
@@ -83,11 +82,13 @@ brew install \
 	wget \
 	zoxide \
 	gitkraken-cli \
-	noahgorstein/tap/jqp \
 	act \
 	just \
 	pipx \
 	pnpm
+
+brew install jesseduffield/lazygit/lazygit
+brew install noahgorstein/tap/jqp
 
 BREW_BIN=$(brew --prefix)/bin
 
