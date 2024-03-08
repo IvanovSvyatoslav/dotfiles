@@ -10,6 +10,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+brew postinstall gcc
+
 # Install stow
 # https://www.gnu.org/software/stow/
 brew install stow
@@ -17,9 +19,6 @@ brew install stow
 # Run stow
 cd ~/.dotfiles
 stow .
-
-# reload config
-exec zsh
 
 # Install tools without dependencies
 # https://docs.asciinema.org/getting-started/
@@ -90,11 +89,10 @@ brew install \
 	pipx \
 	pnpm
 
-# reload config
-exec zsh
+BREW_BIN=$(brew --prefix)/bin
 
 # pipx postinstall
-pipx ensurepath
+$BREW_BIN/pipx ensurepath
 
 # Yazi install
 brew install \
@@ -104,9 +102,6 @@ brew install \
 	exiftool \
 	miller \
 	yazi
-
-# reload config
-exec zsh
 
 # Setup private files
 cp ~/.dotfiles/.config/git/config.example ~/.dotfiles/.config/git/config
@@ -122,72 +117,69 @@ compinit
 # https://asdf-vm.com/guide/getting-started.html
 brew install coreutils curl git asdf
 
-# reload config
-exec zsh
-
 # Asdf Node.js plugin
 # https://github.com/asdf-vm/asdf-nodejs/
 brew install gpg gawk
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf install nodejs latest
-asdf global nodejs latest
+$BREW_BIN/asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+$BREW_BIN/asdf install nodejs latest
+$BREW_BIN/asdf global nodejs latest
 
 # Asdf Python plugin
 # https://github.com/asdf-community/asdf-python
-asdf plugin-add python
-asdf install python latest
-asdf global python latest
+$BREW_BIN/asdf plugin-add python
+$BREW_BIN/asdf install python latest
+$BREW_BIN/asdf global python latest
 
 # Asdf Java plugin
 # https://github.com/halcyon/asdf-java
-asdf plugin-add java https://github.com/halcyon/asdf-java.git
-asdf install java latest:temurin-21
+$BREW_BIN/asdf plugin-add java https://github.com/halcyon/asdf-java.git
+$BREW_BIN/asdf install java latest:temurin-21
 echo "You should set global java version by yourself"
 
 # Asdf Maven plugin
 # https://github.com/halcyon/asdf-maven
-asdf plugin-add maven
-asdf install maven latest
-asdf global maven latest
+$BREW_BIN/asdf plugin-add maven
+$BREW_BIN/asdf install maven latest
+$BREW_BIN/asdf global maven latest
 
 # Asdf .Net Core
 # https://github.com/emersonsoares/asdf-dotnet-core
-asdf plugin-add dotnet-core https://github.com/emersonsoares/asdf-dotnet-core.git
-asdf install dotnet-core latest
-asdf global dotnet-core latest
+$BREW_BIN/asdf plugin-add dotnet-core https://github.com/emersonsoares/asdf-dotnet-core.git
+$BREW_BIN/asdf install dotnet-core latest
+$BREW_BIN/asdf global dotnet-core latest
 
 # Asdf golang
 # https://github.com/asdf-community/asdf-golang
-asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
-asdf install golang latest
-asdf global golang latest
+$BREW_BIN/asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
+$BREW_BIN/asdf install golang latest
+$BREW_BIN/asdf global golang latest
 
 # Asdf rust
 # https://github.com/code-lever/asdf-rust
-asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
-asdf install rust latest
-asdf global rust latest
+$BREW_BIN/asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
+$BREW_BIN/asdf install rust latest
+$BREW_BIN/asdf global rust latest
 
 # Asdf just
 # https://github.com/olofvndrhr/asdf-just
-asdf plugin-add just https://github.com/olofvndrhr/asdf-just.git
-asdf install just latest
-asdf global just latest
+$BREW_BIN/asdf plugin-add just https://github.com/olofvndrhr/asdf-just.git
+$BREW_BIN/asdf install just latest
+$BREW_BIN/asdf global just latest
 
 # Asdf act
 # https://github.com/grimoh/asdf-act
-asdf plugin-add act https://github.com/grimoh/asdf-act.git
-asdf install act latest
-asdf global act latest
+$BREW_BIN/asdf plugin-add act https://github.com/grimoh/asdf-act.git
+$BREW_BIN/asdf install act latest
+$BREW_BIN/asdf global act latest
 
 # Asdf poetry
 # https://github.com/asdf-community/asdf-poetry
-asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
-asdf install poetry latest
-asdf global poetry latest
+$BREW_BIN/asdf plugin-add poetry https://github.com/asdf-community/asdf-poetry.git
+$BREW_BIN/asdf install poetry latest
+$BREW_BIN/asdf global poetry latest
 
 # Asdf pnpm
 # https://github.com/jonathanmorley/asdf-pnpm
-asdf plugin-add pnpm
-asdf install pnpm latest
-asdf global pnpm latest
+$BREW_BIN/asdf plugin-add pnpm
+$BREW_BIN/asdf install pnpm latest
+$BREW_BIN/asdf global pnpm latest
