@@ -1,3 +1,6 @@
+# create dirs if not exist
+mkdir -p .config .cache .local
+
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -113,6 +116,9 @@ rm -f $XDG_CACHE_HOME/.zcompdump
 compinit
 
 # Asdf
+
+export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME/asdf/asdfrc"
+export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
 
 # Install asdf
 # https://asdf-vm.com/guide/getting-started.html

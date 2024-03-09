@@ -85,6 +85,3 @@ eval $(thefuck --alias)
 . $ASDF_DATA_DIR/plugins/golang/set-env.zsh
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
-# Created by `pipx` on 2024-02-23 15:57:42
-export PATH="$PATH:/Users/ivsv/.local/bin"
-
