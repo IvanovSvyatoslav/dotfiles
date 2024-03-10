@@ -1,5 +1,5 @@
 # create dirs if not exist
-mkdir -p .config .cache .local
+mkdir -p ~/.config/git ~/.cache ~/.local
 
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -97,6 +97,9 @@ BREW_BIN=$(brew --prefix)/bin
 
 # pipx postinstall
 $BREW_BIN/pipx ensurepath
+
+# bat add themes
+$BREW_BIN/bat cache --build
 
 # Yazi install
 brew install \
