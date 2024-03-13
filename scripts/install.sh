@@ -1,5 +1,5 @@
 # create dirs if not exist
-mkdir -p ~/.config/git ~/.cache ~/.local
+mkdir -p ~/.config/git ~/.config/zsh ~/.cache ~/.local
 
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -57,6 +57,7 @@ stow .
 # https://github.com/casey/just
 # https://github.com/pypa/pipx
 # https://pnpm.io/
+# https://developer.1password.com/docs/cli
 brew install \
 	asciinema \
 	bat \
@@ -87,7 +88,8 @@ brew install \
 	act \
 	just \
 	pipx \
-	pnpm
+	pnpm \
+	1password-cli
 
 brew install --cask gitkraken-cli
 brew install jesseduffield/lazygit/lazygit
