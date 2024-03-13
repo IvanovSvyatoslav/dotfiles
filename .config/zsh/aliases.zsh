@@ -1,5 +1,5 @@
 # System
-alias rst='exec zsh'
+alias rst='exec zsh -l'
 alias cl='clear'
 
 # Config files
