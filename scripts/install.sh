@@ -58,6 +58,10 @@ stow .
 # https://github.com/pypa/pipx
 # https://pnpm.io/
 # https://developer.1password.com/docs/cli
+# https://github.com/chmln/sd
+# https://github.com/jesseduffield/lazydocker
+# https://github.com/nivekuil/rip
+# https://lnav.org/downloads
 brew install \
 	asciinema \
 	bat \
@@ -89,11 +93,19 @@ brew install \
 	just \
 	pipx \
 	pnpm \
-	1password-cli
+	1password-cli \
+	sd \
+	rm-improved \
+	lnav
 
 brew install --cask gitkraken-cli
 brew install jesseduffield/lazygit/lazygit
 brew install noahgorstein/tap/jqp
+brew install jesseduffield/lazydocker/lazydocker
+
+# Neovim dependencies
+brew install gnu-sed \
+	pngpaste
 
 BREW_BIN=$(brew --prefix)/bin
 

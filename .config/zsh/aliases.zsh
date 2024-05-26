@@ -106,6 +106,13 @@ if command_exists fuck ; then
     alias f='fuck'
 fi
 
+# tmux
+if command_exists tmux ; then 
+    alias t='tmux new-session -A -s '
+    alias tk='tmux kill-session -t mysession'
+    alias tka='tmux kill-session -a'
+fi
+
 # tmuxinator
 if command_exists tmuxinator ; then
     alias mux='tmuxinator'

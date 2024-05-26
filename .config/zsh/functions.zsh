@@ -21,5 +21,5 @@ function ya() {
 
 function c() {
     __zoxide_z "$@"
-    eza --all
+    eza --all --icons
 }
