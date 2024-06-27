@@ -122,6 +122,9 @@ brew install \
 brew install gnu-sed \
 	pngpaste
 
+# https://github.com/neovim/neovim/blob/master/INSTALL.md
+brew install neovim
+
 BREW_BIN=$(brew --prefix)/bin
 
 # pipx postinstall
