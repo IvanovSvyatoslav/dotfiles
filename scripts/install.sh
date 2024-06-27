@@ -1,5 +1,5 @@
 # create dirs if not exist
-mkdir -p ~/.config/git ~/.config/zsh ~/.cache ~/.local
+mkdir -p ~/.config/git ~/.config/zsh ~/.cache ~/.local ~/.config/1Password
 
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
