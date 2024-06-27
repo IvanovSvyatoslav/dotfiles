@@ -60,7 +60,6 @@ stow .
 # https://github.com/casey/just
 # https://github.com/pypa/pipx
 # https://pnpm.io/
-# https://developer.1password.com/docs/cli
 # https://github.com/chmln/sd
 # https://github.com/jesseduffield/lazydocker
 # https://github.com/nivekuil/rip
@@ -96,15 +95,28 @@ brew install \
 	just \
 	pipx \
 	pnpm \
-	1password-cli \
 	sd \
 	rm-improved \
 	lnav
-
-brew install --cask gitkraken-cli
-brew install jesseduffield/lazygit/lazygit
-brew install noahgorstein/tap/jqp
-brew install jesseduffield/lazydocker/lazydocker
+ 
+# https://developer.1password.com/docs/cli
+# sudo -s \
+# curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
+# gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
+# echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/$(dpkg --print-architecture) stable main" |
+# tee /etc/apt/sources.list.d/1password.list
+# mkdir -p /etc/debsig/policies/AC2D62742012EA22/
+# curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | \
+# tee /etc/debsig/policies/AC2D62742012EA22/1password.pol
+# mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
+# curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
+# gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
+# apt update && apt install 1password-cli
+# brew install --cask 1password-cli
+# brew install --cask gitkraken-cli
+# brew install jesseduffield/lazygit/lazygit
+# brew install noahgorstein/tap/jqp
+# brew install jesseduffield/lazydocker/lazydocker
 
 # Neovim dependencies
 brew install gnu-sed \
