@@ -16,8 +16,8 @@ map({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" }) -- 
 map({ "n", "v" }, "<leader>Y", '"+y$', { desc = "Yank to the end of line to system clipboard" }) -- yank line
 
 -- Delete into system clipboard
-map({ "n", "v" }, "<leader>d", '"+d', { desc = "Delete to system clipboard" }) -- delete motion
-map({ "n", "v" }, "<leader>D", '"+D', { desc = "Delete to the end of line to system clipboard" }) -- delete line
+map({ "v" }, "<leader>d", '"+d', { desc = "Delete to system clipboard" }) -- delete motion
+map({ "v" }, "<leader>D", '"+D', { desc = "Delete to the end of line to system clipboard" }) -- delete line
 
 -- Paste from system clipboard
 map({ "n" }, "<leader>p", '"+p', { desc = "Paste after from system clipboard" }) -- paste after cursor

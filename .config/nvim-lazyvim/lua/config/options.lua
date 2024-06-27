@@ -18,3 +18,5 @@ if vim.fn.has("wsl") == 1 then
     cache_enabled = 0,
   }
 end
+
+vim.g.lazyvim_python_ruff = "ruff"

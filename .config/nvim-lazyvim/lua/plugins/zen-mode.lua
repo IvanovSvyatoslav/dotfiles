@@ -16,4 +16,9 @@ return {
       },
     },
   },
+  keys = { {
+    "<leader>z",
+    "<cmd>ZenMode<CR>",
+    desc = "Toggle ZenMode",
+  } },
 }
