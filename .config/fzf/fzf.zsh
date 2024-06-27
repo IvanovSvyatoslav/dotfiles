@@ -4,10 +4,11 @@ if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
   PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
 fi
 
+BREW_OPT=$(brew --prefix)/opt
 # Auto-completion
 # ---------------
-source "/opt/homebrew/opt/fzf/shell/completion.zsh"
+source "$BREW_OPT/fzf/shell/completion.zsh"
 
 # Key bindings
 # ------------
-source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+source "$BREW_OPT/fzf/shell/key-bindings.zsh"
