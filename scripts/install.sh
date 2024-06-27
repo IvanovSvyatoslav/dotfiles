@@ -15,6 +15,9 @@ fi
 
 brew postinstall gcc
 
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+brew install zsh
+
 # Install stow
 # https://www.gnu.org/software/stow/
 brew install stow
