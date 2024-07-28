@@ -26,10 +26,15 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 })
 
 -- Remove zen mode consequenses from kitty and tmux when forgot to exit it
-vim.api.nvim_create_autocmd({ "VimLeave", "VimLeavePre" }, {
+-- vim.api.nvim_create_autocmd({ "VimLeave", "VimLeavePre" }, {
+--   callback = function()
+--     os.execute("kitty @ --to $KITTY_LISTEN_ON set-font-size '0'")
+--     os.execute("tmux set status on")
+--     os.execute("tmux list-panes -F '\\#F' | grep -q Z && tmux resize-pane -Z")
+--   end,
+-- })
+vim.api.nvim_create_autocmd({ "VimLeavePre" }, {
   callback = function()
-    os.execute("kitty @ --to $KITTY_LISTEN_ON set-font-size '0'")
-    os.execute("tmux set status on")
-    os.execute("tmux list-panes -F '\\#F' | grep -q Z && tmux resize-pane -Z")
+    require("zen-mode").close()
   end,
 })

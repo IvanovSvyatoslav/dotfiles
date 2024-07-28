@@ -1,14 +1,22 @@
 [[manager.prepend_keymap]]
-on   = [ "i" ]
-exec = "plugin keyjump --sync --args=keep"
+on = ["i"]
+run = "plugin keyjump --sync --args=keep"
 desc = "Keyjump (Keep mode)"
 
 [[manager.prepend_keymap]]
-on   = [ "l" ]
-exec = "plugin --sync smart-enter"
+on = ["l"]
+run = "plugin --sync smart-enter"
 desc = "Enter the child directory, or open the file"
+
+[[manager.prepend_keymap]]
+on = ["C"]
+run = "plugin ouch --args=zip"
+desc = "Compress with ouch"
 
 [input]
 append_keymap = [
-    { on = [ "j", "j" ], exec = "escape", desc = "Remap jj to ecape insert mode" },
+  { on = [
+    "j",
+    "j",
+  ], run = "escape", desc = "Remap jj to ecape insert mode" },
 ]

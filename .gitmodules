@@ -55,3 +55,6 @@
 [submodule ".config/yazi/plugins/miller.yazi"]
 	path = .config/yazi/plugins/miller.yazi
 	url = https://github.com/Reledia/miller.yazi.git
+[submodule ".config/yazi/plugins/ouch.yazi"]
+	path = .config/yazi/plugins/ouch.yazi
+	url = https://github.com/ndtoan96/ouch.yazi

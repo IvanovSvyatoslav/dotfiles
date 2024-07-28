@@ -5,12 +5,12 @@ mkdir -p ~/.config/git ~/.config/zsh ~/.cache ~/.local/share ~/.config/1Password
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 if [ "$(uname)" = "Darwin" ]; then
-	# Mac OS X platform
-	eval "$(/opt/homebrew/bin/brew shellenv)"
+  # Mac OS X platform
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-	# GNU/Linux platform
-	sudo apt-get install build-essential procps curl file git
-	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  # GNU/Linux platform
+  sudo apt-get install build-essential procps curl file git
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 brew postinstall gcc
@@ -64,41 +64,45 @@ stow .
 # https://github.com/jesseduffield/lazydocker
 # https://github.com/nivekuil/rip
 # https://lnav.org/downloads
+# https://github.com/wagoodman/dive
+# https://github.com/wg/wrk
 brew install \
-	asciinema \
-	bat \
-	btop \
-	dust \
-	eza \
-	fd \
-	fzf \
-	gh \
-	git-delta \
-	git-lfs \
-	glow \
-	hexyl \
-	httpie \
-	jq \
-	midnight-commander \
-	navi \
-	powerlevel10k \
-	ripgrep \
-	tealdeer \
-	thefuck \
-	tmux \
-	tmuxinator \
-	tokei \
-	topgrade \
-	wget \
-	zoxide \
-	act \
-	just \
-	pipx \
-	pnpm \
-	sd \
-	rm-improved \
-	lnav
- 
+  asciinema \
+  bat \
+  btop \
+  dust \
+  eza \
+  fd \
+  fzf \
+  gh \
+  git-delta \
+  git-lfs \
+  glow \
+  hexyl \
+  httpie \
+  jq \
+  midnight-commander \
+  navi \
+  powerlevel10k \
+  ripgrep \
+  tealdeer \
+  thefuck \
+  tmux \
+  tmuxinator \
+  tokei \
+  topgrade \
+  wget \
+  zoxide \
+  act \
+  just \
+  pipx \
+  pnpm \
+  sd \
+  rm-improved \
+  lnav \
+  dive \
+  wrk
+
 # https://developer.1password.com/docs/cli
 # sudo -s \
 # curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
@@ -120,7 +124,7 @@ brew install \
 
 # Neovim dependencies
 brew install gnu-sed \
-	pngpaste
+  pngpaste
 
 # https://github.com/neovim/neovim/blob/master/INSTALL.md
 brew install neovim
@@ -135,12 +139,13 @@ $BREW_BIN/bat cache --build
 
 # Yazi install
 brew install \
-	unar \
-	poppler \
-	ffmpegthumbnailer \
-	exiftool \
-	miller \
-	yazi
+  unar \
+  poppler \
+  ffmpegthumbnailer \
+  exiftool \
+  miller \
+  yazi \
+  ouch
 
 # Setup private files
 cp ~/.dotfiles/.config/git/config.example ~/.dotfiles/.config/git/config
@@ -225,3 +230,6 @@ $BREW_BIN/asdf global poetry latest
 $BREW_BIN/asdf plugin-add pnpm
 $BREW_BIN/asdf install pnpm latest
 $BREW_BIN/asdf global pnpm latest
+
+# https://github.com/TheR1D/shell_gpt
+pip install shell-gpt

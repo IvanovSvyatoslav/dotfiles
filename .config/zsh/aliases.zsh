@@ -122,3 +122,11 @@ fi
 if command_exists tmuxinator ; then
     alias mux='tmuxinator'
 fi
+
+
+if command_exists sgpt ; then
+    alias s='sgpt'
+    alias ss='sgpt --shell'
+    alias sr='sgpt --repl temp'
+    alias sc='sgpt --code'
+fi
