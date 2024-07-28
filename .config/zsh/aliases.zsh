@@ -130,3 +130,10 @@ if command_exists sgpt ; then
     alias sr='sgpt --repl temp'
     alias sc='sgpt --code'
 fi
+
+# wsl
+if uname -r |grep -q 'Microsoft' ; then
+    source $XDG_CONFIG_HOME/1Password/config.zsh
+    alias ollama='ollama.exe'
+fi
+

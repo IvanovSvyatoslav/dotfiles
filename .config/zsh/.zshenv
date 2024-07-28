@@ -25,9 +25,17 @@ if [ "$(uname)" = "Darwin" ]; then
   # Mac OS X platform
   export SSH_AUTH_SOCK=~/.1password/agent.sock
 elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-  # GNU/Linux platform (wsl)
-  alias ssh='ssh.exe'
-  alias ssh-add='ssh-add.exe'
+  # GNU/Linux platform
+fi
+
+# wsl
+if uname -r |grep -q 'Microsoft' ; then
+    alias ssh='ssh.exe'
+    alias ssh-add='ssh-add.exe'
+    alias ollama='ollama.exe'
+    if [ -n "$SSH_CONNECTION" ]; then
+      /mnt/c/Windows/System32/wsl.exe
+    fi
 fi
 
 
