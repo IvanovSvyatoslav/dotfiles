@@ -7,7 +7,6 @@
 
 - install zsh
 - install docker
-- configure obsidian nvim
 - install kitty
 
 ## Installation
