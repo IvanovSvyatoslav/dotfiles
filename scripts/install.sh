@@ -15,7 +15,7 @@ fi
 
 brew postinstall gcc
 
-# https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+# TODO: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
 # for wsl apt install zsh
 
 # Install stow
@@ -103,6 +103,11 @@ brew install \
   dive \
   wrk
 
+brew install noahgorstein/tap/jqp
+brew install jesseduffield/lazygit/lazygit
+brew install jesseduffield/lazydocker/lazydocker
+
+# TODO: only macos
 # https://developer.1password.com/docs/cli
 # sudo -s \
 # curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
@@ -118,9 +123,6 @@ brew install \
 # apt update && apt install 1password-cli
 # brew install --cask 1password-cli
 # brew install --cask gitkraken-cli
-# brew install jesseduffield/lazygit/lazygit
-# brew install noahgorstein/tap/jqp
-# brew install jesseduffield/lazydocker/lazydocker
 
 # Neovim dependencies
 brew install gnu-sed \
@@ -173,6 +175,8 @@ $BREW_BIN/asdf global nodejs latest
 
 # Asdf Python plugin
 # https://github.com/asdf-community/asdf-python
+# TODO: linux
+# sudo apt install libssl-dev libffi-dev libncurses5-dev zlib1g zlib1g-dev libreadline-dev libbz2-dev libsqlite3-dev make gcc liblzma-dev
 $BREW_BIN/asdf plugin-add python
 $BREW_BIN/asdf install python latest
 $BREW_BIN/asdf global python latest

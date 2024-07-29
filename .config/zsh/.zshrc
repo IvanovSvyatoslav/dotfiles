@@ -23,11 +23,11 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_VERIFY
 setopt APPENDHISTORY 
 
-# Personal aliases and commands
-source $ZDOTDIR/personal.zsh
-
 # Custom commands
 source $ZDOTDIR/functions.zsh
+
+# Personal aliases and commands
+source $ZDOTDIR/personal.zsh
 
 # Custom aliases
 source $ZDOTDIR/aliases.zsh
