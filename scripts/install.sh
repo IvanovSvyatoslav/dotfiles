@@ -103,6 +103,9 @@ brew install \
   dive \
   wrk
 
+# https://github.com/dlvhdr/gh-dash
+gh extension install dlvhdr/gh-dash
+
 brew install noahgorstein/tap/jqp
 brew install jesseduffield/lazygit/lazygit
 brew install jesseduffield/lazydocker/lazydocker
@@ -236,4 +239,4 @@ $BREW_BIN/asdf install pnpm latest
 $BREW_BIN/asdf global pnpm latest
 
 # https://github.com/TheR1D/shell_gpt
-pip install shell-gpt
+pip install shell-gpt pylatexenc

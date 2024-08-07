@@ -23,7 +23,7 @@ return {
           {
             'rafamadriz/friendly-snippets',
             config = function()
-              require('luasnip.loaders.from_vscode').lazy_load()
+              require('luasnip.loaders.from_vscode').lazy_load {}
             end,
           },
         },
@@ -37,6 +37,7 @@ return {
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
+      luasnip.filetype_extend('markdown', { 'tex' })
       luasnip.config.setup {}
 
       cmp.setup {
@@ -98,7 +99,6 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' }, -- For luasnip users.
           { name = 'path' },
-          { name = 'otter' },
         }, {
           { name = 'buffer' },
         }),

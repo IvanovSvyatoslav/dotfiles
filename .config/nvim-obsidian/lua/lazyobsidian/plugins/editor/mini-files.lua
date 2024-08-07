@@ -11,6 +11,11 @@ return {
       desc = 'Open file [E]xplorer',
     },
   },
+  opts = {
+    windows = {
+      preview = true,
+    },
+  },
   config = function(_, opts)
     require('mini.files').setup(opts)
   end,

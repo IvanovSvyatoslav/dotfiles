@@ -1,42 +1,3 @@
-local function createNoteWithTemplate()
-  local obsidian = require('obsidian').get_client()
-  local utils = require 'obsidian.util'
-
-  -- prevent Obsidian.nvim from injecting it's own frontmatter table
-  obsidian.opts.disable_frontmatter = true
-
-  -- prompt for note title
-  -- @see: borrowed from obsidian.command.new
-  local note
-  local title = utils.input 'Enter title or path (optional): '
-  if not title then
-    return
-  elseif title == '' then
-    title = nil
-  end
-
-  note = obsidian:create_note { title = title, no_write = true }
-
-  if not note then
-    return
-  end
-  local picker = obsidian:picker()
-  if not picker then
-    return
-  end
-
-  -- open new note in a buffer
-  obsidian:open_note(note, { sync = true })
-
-  picker:find_templates {
-    callback = function(path)
-      obsidian:write_note_to_buffer(note, { template = path })
-      -- hack: delete empty lines before frontmatter; template seems to be injected at line 2
-      vim.api.nvim_buf_set_lines(0, 0, 1, false, {})
-      obsidian.opts.disable_frontmatter = false
-    end,
-  }
-end
 return {
   'epwalsh/obsidian.nvim',
   version = '*', -- recommended, use latest release instead of latest commit
@@ -63,6 +24,7 @@ return {
         path = '~/vaults/Thoughts',
       },
     },
+    ui = { enable = false },
     -- Optional, set to true if you use the Obsidian Advanced URI plugin.
     -- https://github.com/Vinzent03/obsidian-advanced-uri
     use_advanced_uri = true,
@@ -77,6 +39,7 @@ return {
       alias_format = '',
       -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
       template = 'Ежедневная заметка.md',
+      default_tags = {},
     },
     -- Optional, customize how note IDs are generated given an optional title.
     ---@param title string|?
@@ -239,7 +202,7 @@ return {
     },
     {
       '<leader>oc',
-      createNoteWithTemplate,
+      '<cmd>ObsidianNewFromTemplate<CR>',
       desc = '[C]reate note from template',
     },
     {

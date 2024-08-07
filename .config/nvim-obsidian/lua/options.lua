@@ -13,7 +13,7 @@ vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
 
 -- obsidian.nvim (https://github.com/epwalsh/obsidian.nvim?tab=readme-ov-file#concealing-characters)
-vim.opt.conceallevel = 1
+-- vim.opt.conceallevel = 1
 
 -- Don't show the mode, since it's already in status line
 vim.opt.showmode = false
