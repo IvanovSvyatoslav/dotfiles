@@ -75,6 +75,8 @@ git clone --recurse-submodules https://github.com/IvanovSvyatoslav/dotfiles.git 
   - [Catppuccin theme](https://github.com/catppuccin/btop)
 - [ripgrep](https://github.com/BurntSushi/ripgrep). Line-oriented search tool.
 - [fd](https://github.com/sharkdp/fd). Better find alternative.
+- [pre-commit](https://pre-commit.com/). Framework for managing and maintaining multi-language pre-commit hooks.
+- [ATAC](https://github.com/Julien-cpsn/ATAC). TUI API client.
 - [jq](https://stedolan.github.io/jq/). Lightweight and flexible command-line JSON processor.
   - [jqp](https://github.com/noahgorstein/jqp). TUI playground for `jq`.
 - [GNU Stow](https://www.gnu.org/software/stow/). Dotfiles symlink manager.

@@ -123,7 +123,32 @@ if command_exists tmuxinator ; then
     alias mux='tmuxinator'
 fi
 
+# docker
+if command_exists docker ; then
+    alias d='docker'
+    alias dr='docker run'
+    alias ds='docker start'
+    alias dst='docker stop'
+    alias drm='docker rm'
+    alias dp='docker ps'
+    alias dpa='docker ps -a'
+    alias dl='docker logs'
+    alias di='docker image'
+    alias dils='docker image ls'
+    alias dirm='docker image rm'
+    alias dv='docker volume'
+    alias dvls='docker volume ls'
+    alias dvrm='docker volume rm'
+    alias dc='docker compose'
+    alias dcu='docker compose up'
+    alias dcud='docker compose up -d'
+    alias dcd='docker compose down'
+    alias dcs='docker compose start'
+    alias dcst='docker compose stop'
+    alias dcl='docker compose logs'
+fi
 
+# sgpt
 if command_exists sgpt ; then
     alias s='sgpt'
     alias ss='sgpt --shell'

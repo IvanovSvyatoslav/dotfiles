@@ -102,9 +102,12 @@ brew install \
   lnav \
   dive \
   wrk
-
 # https://github.com/dlvhdr/gh-dash
 gh extension install dlvhdr/gh-dash
+
+# https://github.com/Julien-cpsn/ATAC
+brew tap julien-cpsn/atac
+brew install atac
 
 brew install noahgorstein/tap/jqp
 brew install jesseduffield/lazygit/lazygit
@@ -239,4 +242,5 @@ $BREW_BIN/asdf install pnpm latest
 $BREW_BIN/asdf global pnpm latest
 
 # https://github.com/TheR1D/shell_gpt
-pip install shell-gpt pylatexenc
+# https://pre-commit.com/#install
+pip install shell-gpt pylatexenc pre-commit
