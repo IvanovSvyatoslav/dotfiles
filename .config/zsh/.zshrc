@@ -99,3 +99,5 @@ zle -N _sgpt_zsh
 bindkey ^o _sgpt_zsh
 # Shell-GPT integration ZSH v0.2
 
+# gh copilot
+eval "$(gh copilot alias -- zsh)"

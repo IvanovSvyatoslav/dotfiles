@@ -83,6 +83,7 @@ git clone --recurse-submodules https://github.com/IvanovSvyatoslav/dotfiles.git 
 - [dust](https://github.com/bootandy/dust). Better `du` alternative.
 - [Github cli](https://cli.github.com/). GitHub’s official command line tool.
   - [gh-dash](https://github.com/dlvhdr/gh-dash). GitHub CLI dashboard.
+  - [gh-copilot](https://docs.github.com/ru/copilot/using-github-copilot/using-github-copilot-in-the-command-line). GitHub Copilot CLI.
 - [lazydocker](https://github.com/jesseduffield/lazydocker). Simple terminal UI for Docker.
 - [rip](https://github.com/nivekuil/rip). Safe and ergonomic alternative to `rm`.
 - [hexyl](https://github.com/sharkdp/hexyl). Hex terminal viewer.

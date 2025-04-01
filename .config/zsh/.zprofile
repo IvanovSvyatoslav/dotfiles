@@ -28,3 +28,5 @@ export FZF_DEFAULT_OPTS=" \
 
 # Created by `pipx` on 2024-02-23 15:57:42
 export PATH="$PATH:/Users/ivsv/.local/bin"
+
+export PATH="$PATH:/Users/ivsv/.dotnet/tools"

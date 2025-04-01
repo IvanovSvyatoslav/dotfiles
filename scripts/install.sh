@@ -102,8 +102,12 @@ brew install \
   lnav \
   dive \
   wrk
+
 # https://github.com/dlvhdr/gh-dash
 gh extension install dlvhdr/gh-dash
+
+# https://docs.github.com/ru/copilot/using-github-copilot/using-github-copilot-in-the-command-line
+gh extension install github/gh-copilot
 
 # https://github.com/Julien-cpsn/ATAC
 brew tap julien-cpsn/atac

@@ -34,6 +34,7 @@ return {
       "trouble",
       "Trouble",
       "fugitive",
+      "dbui",
     },
   },
   command = "Hardtime",

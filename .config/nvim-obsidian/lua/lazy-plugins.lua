@@ -76,4 +76,17 @@ require('lazy').setup({
   },
 })
 
+local otter = require 'otter'
+
+-- vim.g.markdown_fenced_languages = {
+--   'tex',
+-- }
+
+vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+  pattern = { '*.md' },
+  callback = function()
+    otter.activate(nil, true, true)
+  end,
+})
+
 -- vim: ts=2 sts=2 sw=2 et
