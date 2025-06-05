@@ -51,6 +51,7 @@ fi
 
 # neovim
 if command_exists nvim ; then
+    # alias lv='NVIM_APPNAME="nvim-lazyvim" nvim'
     alias lv='~/bin/nvim-lazyvim'
     alias kv='~/bin/nvim-kickstart'
     alias ov='~/bin/nvim-obsidian'
@@ -151,6 +152,7 @@ if command_exists docker ; then
     alias dcs='docker compose start'
     alias dcst='docker compose stop'
     alias dcl='docker compose logs'
+    alias dcb='docker compose build'
 fi
 
 # sgpt

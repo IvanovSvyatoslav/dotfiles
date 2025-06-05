@@ -48,6 +48,10 @@ function zvm_after_init() {
     [ -f $XDG_CONFIG_HOME/fzf/fzf.zsh ] && source $XDG_CONFIG_HOME/fzf/fzf.zsh
 }
 
+# fast-syntax-highlighting
+source $ZPLUGDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+fast-theme XDG:catppuccin-mocha -q
+
 # zsh-auto-suggestions
 source $ZPLUGDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -60,10 +64,6 @@ eval "$(zoxide init zsh)"
 
 # navi
 eval "$(navi widget zsh)"
-
-# fast-syntax-highlighting
-source $ZPLUGDIR/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-fast-theme XDG:catppuccin-mocha -q
 
 # powerlevel10k
 source $ZPLUGDIR/powerlevel10k/powerlevel10k.zsh-theme
@@ -101,3 +101,14 @@ bindkey ^o _sgpt_zsh
 
 # gh copilot
 eval "$(gh copilot alias -- zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/ivsv/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# duckdb
+export PATH='/Users/ivsv/.duckdb/cli/latest':$PATH

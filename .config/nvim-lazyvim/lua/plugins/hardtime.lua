@@ -35,14 +35,15 @@ return {
       "Trouble",
       "fugitive",
       "dbui",
+      "copilot-chat",
     },
   },
   command = "Hardtime",
   event = "BufEnter",
-  keys = {
-    { "n", "j", "<cmd>Hardtime<CR>", desc = "Hardtime" },
-    { "n", "k", "<cmd>Hardtime<CR>", desc = "Hardtime" },
-    { "n", "gj", "<cmd>Hardtime<CR>", desc = "Hardtime" },
-    { "n", "gk", "<cmd>Hardtime<CR>", desc = "Hardtime" },
-  },
+  -- keys = {
+  --   { "n", "j", "<cmd>Hardtime<CR>", desc = "Hardtime" },
+  --   { "n", "k", "<cmd>Hardtime<CR>", desc = "Hardtime" },
+  --   { "n", "gj", "<cmd>Hardtime<CR>", desc = "Hardtime" },
+  --   { "n", "gk", "<cmd>Hardtime<CR>", desc = "Hardtime" },
+  -- },
 }

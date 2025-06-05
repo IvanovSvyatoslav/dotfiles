@@ -9,7 +9,7 @@ function read_log {
     tail -f "$1" | bat --paging=never -l log
 }
 
-function ya() {
+function y() {
     # Shell wrapper to leave cwd when exitinf yazi
 	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
 	yazi "$@" --cwd-file="$tmp"
